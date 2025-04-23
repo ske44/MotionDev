@@ -14,28 +14,32 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #00bfff, #1e90ff);
       color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      padding: 30px 20px;
       text-align: center;
+      padding: 40px 20px;
+      overflow-x: hidden;
     }
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
     }
 
-    .discord-icon {
-      width: 60px;
-      margin: 10px;
-      transition: transform 0.2s ease;
+    .slider-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
     }
 
-    .discord-icon:hover {
-      transform: scale(1.1);
+    .slider-track {
+      display: flex;
+      gap: 20px;
+      animation: scroll 20s linear infinite;
+      padding-bottom: 30px;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
     }
 
     .card {
@@ -43,13 +47,13 @@
       color: #1e1e1e;
       border-radius: 25px;
       padding: 25px;
-      margin: 20px;
-      width: 320px;
+      min-width: 300px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       text-align: center;
       transition: transform 0.2s ease;
       cursor: pointer;
       text-decoration: none;
+      flex-shrink: 0;
     }
 
     .card:hover {
@@ -71,21 +75,28 @@
 <body>
   <h1>MotionDev</h1>
 
-  <!-- Discord Icon -->
-  <a href="https://discord.gg/NS9reWDdXU" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord" class="discord-icon">
-  </a>
+  <div class="slider-container">
+    <div class="slider-track">
+      
+      <!-- Playerok Card -->
+      <a href="https://playerok.com/profile/MotionDev/products" target="_blank" class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Cart Icon">
+        <span>Хотите купить сборку?<br>Это можно сделать на нашем Playerok!</span>
+      </a>
 
-  <!-- Playerok Card -->
-  <a href="https://playerok.com/profile/MotionDev/products" target="_blank" class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Cart Icon">
-    <span>Хотите купить сборку?<br>Это можно сделать на нашем Playerok!</span>
-  </a>
+      <!-- MeridaNodes Card -->
+      <a href="https://discord.gg/nkxSns9d7C" target="_blank" class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord Icon">
+        <span>Хотите купить хороший хостинг?<br>Тогда тебе на MeridaNodes!</span>
+      </a>
 
-  <!-- MeridaNodes Card -->
-  <a href="https://discord.gg/nkxSns9d7C" target="_blank" class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord Icon">
-    <span>Хотите купить хороший хостинг?<br>Тогда тебе на MeridaNodes!</span>
-  </a>
+      <!-- Discord Card -->
+      <a href="https://discord.gg/NS9reWDdXU" target="_blank" class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord Icon">
+        <span>Наш Discord сервер<br>Присоединяйся к MotionDev!</span>
+      </a>
+
+    </div>
+  </div>
 </body>
 </html>
